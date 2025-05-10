@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -68,9 +67,6 @@ const Navbar = () => {
         </nav>
 
         <div className="hidden md:flex items-center">
-          <Button variant="ghost" className="mr-2">
-            Login
-          </Button>
           <Button>Get Consultation</Button>
         </div>
 
@@ -103,7 +99,6 @@ const Navbar = () => {
             </NavLink>
           ))}
           <div className="flex flex-col space-y-2 pt-2">
-            <Button variant="outline">Login</Button>
             <Button>Get Consultation</Button>
           </div>
         </nav>
