@@ -1,10 +1,7 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-
 const About = () => {
-  return (
-    <section className="section-padding bg-blue-50">
+  return <section className="section-padding bg-blue-50">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -40,35 +37,17 @@ const About = () => {
             
             <div className="relative z-10 grid grid-cols-2 gap-4">
               <div className="space-y-4">
-                <img 
-                  src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80" 
-                  alt="Team collaboration" 
-                  className="rounded-lg shadow-lg h-40 object-cover w-full"
-                />
-                <img 
-                  src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?auto=format&fit=crop&q=80" 
-                  alt="Technology solutions" 
-                  className="rounded-lg shadow-lg h-64 object-cover w-full"
-                />
+                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80" alt="Team collaboration" className="rounded-lg shadow-lg h-40 object-cover w-full" />
+                <img src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?auto=format&fit=crop&q=80" alt="Technology solutions" className="rounded-lg shadow-lg h-64 object-cover w-full" />
               </div>
               <div className="space-y-4">
-                <img 
-                  src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80" 
-                  alt="Secure technology" 
-                  className="rounded-lg shadow-lg h-64 object-cover w-full"
-                />
-                <img 
-                  src="https://images.unsplash.com/photo-1563461661481-0fbe71b2e381?auto=format&fit=crop&q=80" 
-                  alt="Innovation" 
-                  className="rounded-lg shadow-lg h-40 object-cover w-full"
-                />
+                <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80" alt="Secure technology" className="rounded-lg shadow-lg h-64 object-cover w-full" />
+                <img alt="Innovation" className="rounded-lg shadow-lg h-40 object-cover w-full" src="/lovable-uploads/7a0069e8-fdb0-4b47-b070-827d649fbff0.png" />
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;
