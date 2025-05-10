@@ -42,9 +42,13 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between">
         <Link to="/" className="flex items-center">
-          <span className="text-2xl font-bold text-feliceon-darkblue">
-            Feliceon
-            <span className="text-feliceon-blue">Digital</span>
+          <img 
+            src="/lovable-uploads/fa88d456-0ba1-4d3b-af30-75cc518e0c30.png" 
+            alt="Feliceon Digital Solusi Logo" 
+            className="h-10 mr-3"
+          />
+          <span className="text-xl font-bold text-feliceon-darkblue">
+            Feliceon Digital Solusi
           </span>
         </Link>
 
