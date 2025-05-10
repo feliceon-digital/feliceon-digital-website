@@ -8,6 +8,19 @@ import { Link } from "react-router-dom";
 const Services = () => {
   const services = [
     {
+      id: "ai-solutions",
+      title: "AI-Powered Solutions",
+      description: "Cutting-edge artificial intelligence solutions to transform your business and creative processes",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+      features: [
+        "AI Artist for digital art creation",
+        "3D modeling and rendering with AI",
+        "AI-powered video creation and editing",
+        "Custom image generation and manipulation",
+        "AI-driven website and application development"
+      ]
+    },
+    {
       id: "it-consultation",
       title: "IT & Technology Consultation",
       description: "Strategic guidance to align technology with your business objectives",
