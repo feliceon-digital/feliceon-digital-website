@@ -1,35 +1,20 @@
-
 import { Link } from "react-router-dom";
 import { Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 
 // Custom TikTok icon since it's not included in lucide-react
-const TiktokIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
+const TiktokIcon = () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M9 12a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z" />
     <path d="M16 8v8" />
     <path d="M12 16v-8" />
     <path d="M19 12c-3 0-6-2-6-5a3 3 0 0 1 3-3h3v16" />
-  </svg>
-);
-
+  </svg>;
 const Footer = () => {
-  return (
-    <footer className="bg-feliceon-darkblue text-white">
+  return <footer className="bg-feliceon-darkblue text-white">
       <div className="container mx-auto pt-12 pb-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Feliceon Digital Solusi</h3>
+            <h3 className="text-xl font-bold mb-4">PT Feliceon Digital Solusi</h3>
             <p className="mb-4 text-gray-300">
               Leading IT and technology consultation, software development, and
               cybersecurity solutions provider.
@@ -148,8 +133,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
