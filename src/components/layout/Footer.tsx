@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { Instagram, Linkedin, TiktokIcon, Mail, Phone, MapPin } from "lucide-react";
+import { Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 
 // Custom TikTok icon since it's not included in lucide-react
 const TiktokIcon = () => (
