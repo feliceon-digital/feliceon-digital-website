@@ -22,15 +22,11 @@ const About = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl font-bold text-feliceon-darkblue mb-6">Our Story</h2>
-                <p className="text-feliceon-gray mb-4">
-                  Feliceon Digital Solusi was founded in 2015 with a vision to help businesses harness the power of technology for growth and innovation. Starting as a small team of passionate technologists, we have grown into a comprehensive digital solutions provider trusted by clients across industries.
-                </p>
+                <p className="text-feliceon-gray mb-4">Feliceon Digital Solusi was founded in 2024 with a vision to help businesses harness the power of technology for growth and innovation. Starting as a small team of passionate technologists, we have grown into a comprehensive digital solutions provider trusted by clients across industries.</p>
                 <p className="text-feliceon-gray mb-4">
                   Our journey began with offering basic IT consultation services, but we quickly expanded our expertise to software development, cybersecurity, and technology infrastructure as we recognized the evolving needs of the digital landscape.
                 </p>
-                <p className="text-feliceon-gray">
-                  Today, Feliceon Digital Solusi is recognized as a leader in providing end-to-end technology solutions that drive business value and competitive advantage for our clients.
-                </p>
+                <p className="text-feliceon-gray">Today, Feliceon Digital Solusi is recognized as a company in providing end-to-end technology solutions that drive business value and competitive advantage for our clients.</p>
               </div>
               <div className="relative">
                 <div className="absolute -top-4 -right-4 w-32 h-32 bg-feliceon-blue/10 rounded-full"></div>
