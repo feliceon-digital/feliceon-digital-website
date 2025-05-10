@@ -1,12 +1,9 @@
-
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Chatbot from "@/components/shared/Chatbot";
 import Team from "@/components/home/Team";
-
 const About = () => {
-  return (
-    <>
+  return <>
       <Navbar />
       <main className="pt-20">
         <section className="py-12 md:py-16 bg-blue-50">
@@ -15,9 +12,7 @@ const About = () => {
               <h1 className="text-4xl md:text-5xl font-bold text-feliceon-darkblue mb-4">
                 About Feliceon Digital Solusi
               </h1>
-              <p className="text-xl text-feliceon-gray">
-                Delivering innovative technology solutions since 2015
-              </p>
+              <p className="text-xl text-feliceon-gray">Delivering innovative technology solutions since 2024</p>
             </div>
           </div>
         </section>
@@ -40,11 +35,7 @@ const About = () => {
               <div className="relative">
                 <div className="absolute -top-4 -right-4 w-32 h-32 bg-feliceon-blue/10 rounded-full"></div>
                 <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-feliceon-blue/15 rounded-full"></div>
-                <img 
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80" 
-                  alt="Feliceon team meeting" 
-                  className="rounded-lg shadow-lg relative z-10 w-full h-auto"
-                />
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80" alt="Feliceon team meeting" className="rounded-lg shadow-lg relative z-10 w-full h-auto" />
               </div>
             </div>
           </div>
@@ -75,8 +66,6 @@ const About = () => {
       </main>
       <Footer />
       <Chatbot />
-    </>
-  );
+    </>;
 };
-
 export default About;
