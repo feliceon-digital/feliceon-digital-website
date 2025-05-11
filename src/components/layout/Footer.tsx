@@ -99,7 +99,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Mail size={18} className="mr-2 text-feliceon-lightblue" />
-                <span className="text-gray-300">info@feliceon.com</span>
+                <span className="text-gray-300">contact@feliceon-digital.com</span>
               </li>
               <li className="flex items-start">
                 <MapPin size={18} className="mr-2 mt-1 text-feliceon-lightblue" />
