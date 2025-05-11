@@ -3,7 +3,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Instagram, Linkedin } from "lucide-react";
 
-const Team = () => {
+// Modified to accept a showTeam prop
+const Team = ({ showTeam = true }: { showTeam?: boolean }) => {
+  // If showTeam is false, don't render anything
+  if (!showTeam) return null;
+
   const teamMembers = [
     {
       name: "Alex Johnson",

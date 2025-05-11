@@ -72,7 +72,9 @@ const Index = () => {
           </div>
         </section>
         
-        <Team />
+        {/* Team section is now hidden on the homepage */}
+        <Team showTeam={false} />
+        
         <WhyChooseUs />
         <VideoSection />
         
