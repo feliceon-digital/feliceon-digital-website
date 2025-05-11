@@ -1,13 +1,10 @@
-
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ContactForm from "@/components/shared/ContactForm";
 import Chatbot from "@/components/shared/Chatbot";
 import { Mail, Phone, MapPin } from "lucide-react";
-
 const Contact = () => {
-  return (
-    <>
+  return <>
       <Navbar />
       <main className="pt-20">
         <section className="py-12 md:py-16 bg-blue-50">
@@ -53,7 +50,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-medium text-feliceon-darkblue mb-1">Email</h3>
-                      <p className="text-feliceon-gray">info@feliceon.com</p>
+                      <p className="text-feliceon-gray">contact@feliceon-digital.com</p>
                     </div>
                   </div>
                   
@@ -103,8 +100,6 @@ const Contact = () => {
       </main>
       <Footer />
       <Chatbot />
-    </>
-  );
+    </>;
 };
-
 export default Contact;
