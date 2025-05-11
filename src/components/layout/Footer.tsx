@@ -21,13 +21,13 @@ const Footer = () => {
               cybersecurity solutions provider.
             </p>
             <div className="flex space-x-3">
-              <a href="https://instagram.com" className="text-white hover:text-feliceon-lightblue transition-colors" aria-label="Instagram">
+              <a href="https://instagram.com/feliceon.digital" className="text-white hover:text-feliceon-lightblue transition-colors" aria-label="Instagram">
                 <Instagram size={20} />
               </a>
-              <a href="https://www.tiktok.com/@feliceon" className="text-white hover:text-feliceon-lightblue transition-colors" aria-label="TikTok">
+              <a href="https://www.tiktok.com/feliceon.digital" className="text-white hover:text-feliceon-lightblue transition-colors" aria-label="TikTok">
                 <TiktokIcon />
               </a>
-              <a href="https://linkedin.com" className="text-white hover:text-feliceon-lightblue transition-colors" aria-label="LinkedIn">
+              <a href="https://linkedin.com/company/feliceon-digital-solusi" className="text-white hover:text-feliceon-lightblue transition-colors" aria-label="LinkedIn">
                 <Linkedin size={20} />
               </a>
             </div>
