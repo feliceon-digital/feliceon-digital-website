@@ -1,16 +1,11 @@
-
 import { Link } from "react-router-dom";
 import { Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
-
-const TiktokIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+const TiktokIcon = () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M9 12a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z" />
     <path d="M16 8v8" />
     <path d="M12 16v-8" />
     <path d="M19 12c-3 0-6-2-6-5a3 3 0 0 1 3-3h3v16" />
-  </svg>
-);
-
+  </svg>;
 const Footer = () => {
   return <footer className="bg-feliceon-darkblue text-white">
       <div className="container mx-auto pt-12 pb-6">
@@ -108,9 +103,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start">
                 <MapPin size={18} className="mr-2 mt-1 text-feliceon-lightblue" />
-                <span className="text-gray-300">
-                  Jl. Technology Park No. 123, Jakarta, Indonesia
-                </span>
+                <span className="text-gray-300">Skynindo Building, Jl Susilo Raya, Grogol Jakarta Barat DKI Jakarta</span>
               </li>
             </ul>
           </div>
