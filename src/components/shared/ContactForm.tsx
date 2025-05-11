@@ -27,11 +27,20 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Create a mailto link with the form data
+      const mailtoLink = `mailto:contact@feliceon-digital.com?subject=${encodeURIComponent(
+        formData.subject
+      )}&body=${encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      )}`;
+      
+      // Open the email client
+      window.location.href = mailtoLink;
+      
       toast({
-        title: "Message sent!",
-        description: "We'll respond to your inquiry as soon as possible."
+        title: "Email client opened!",
+        description: "Please send the email from your email client to complete your inquiry."
       });
       
       // Reset form
@@ -42,14 +51,16 @@ const ContactForm = () => {
         message: "",
         captcha: ""
       });
-      
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "There was a problem opening your email client. Please try again.",
+        variant: "destructive"
+      });
+      console.error("Error opening email client:", error);
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
-    
-    // In a real implementation, you would:
-    // 1. Validate captcha
-    // 2. Submit form data to backend API
-    // 3. Handle success/error responses
+    }
   };
 
   return (
