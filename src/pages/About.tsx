@@ -1,7 +1,8 @@
+
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Chatbot from "@/components/shared/Chatbot";
-import Team from "@/components/home/Team";
+
 const About = () => {
   return <>
       <Navbar />
@@ -56,9 +57,7 @@ const About = () => {
           </div>
         </section>
 
-        <section className="section-padding" id="team">
-          <Team />
-        </section>
+        {/* Team section removed */}
       </main>
       <Footer />
       <Chatbot />
