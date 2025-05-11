@@ -1,3 +1,4 @@
+
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ContactForm from "@/components/shared/ContactForm";
@@ -86,7 +87,7 @@ const Contact = () => {
 
                 <div className="rounded-lg overflow-hidden h-64 w-full">
                   <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.6664672508882!2d106.78162707454872!3d-6.178305493824698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f65c8572905d%3A0x62be0017c7dbbc1a!2sJl.%20Susilo%20Raya%2C%20Grogol%2C%20Kec.%20Grogol%20petamburan%2C%20Kota%20Jakarta%20Barat%2C%20Daerah%20Khusus%20Ibukota%20Jakarta!5e0!3m2!1sid!2sid!4v1715522445304!5m2!1sid!2sid" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.6600540307336!2d106.78101899999999!3d-6.1789196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f7c9c40114e9%3A0x3df05ba560775c66!2sSkynindo!5e0!3m2!1sen!2sid!4v1715565896207!5m2!1sen!2sid" 
                     width="100%" 
                     height="100%" 
                     style={{ border: 0 }} 
@@ -97,7 +98,6 @@ const Contact = () => {
                     aria-label="Map showing Feliceon Digital Solusi Office Location"
                     className="w-full h-full"
                   ></iframe>
-                  </div>
                 </div>
               </div>
             </div>
