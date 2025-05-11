@@ -61,7 +61,7 @@ const Contact = () => {
                     <div>
                       <h3 className="text-lg font-medium text-feliceon-darkblue mb-1">Office Location</h3>
                       <p className="text-feliceon-gray">
-                        Jl. Technology Park No. 123<br />
+                        Skynindo Building, Jl. Susilo Rays Grogol<br />
                         Jakarta, Indonesia
                       </p>
                     </div>
