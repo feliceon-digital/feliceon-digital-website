@@ -9,7 +9,7 @@ const WhyChooseUs = () => {
     },
     {
       title: "Proven Track Record",
-      description: "We've successfully delivered hundreds of projects for diverse clients across industries."
+      description: "Our team have experience to delivered hundreds of projects for diverse clients across industries."
     },
     {
       title: "Comprehensive Solutions",
