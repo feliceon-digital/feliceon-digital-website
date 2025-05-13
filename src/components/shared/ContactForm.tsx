@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -15,6 +15,22 @@ const ContactForm = () => {
     captcha: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [captchaCode, setCaptchaCode] = useState("");
+
+  // Generate a random CAPTCHA code when the component mounts
+  useEffect(() => {
+    generateCaptcha();
+  }, []);
+
+  // Function to generate a random CAPTCHA code
+  const generateCaptcha = () => {
+    const characters = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+    let result = "";
+    for (let i = 0; i < 5; i++) {
+      result += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    setCaptchaCode(result);
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -25,6 +41,17 @@ const ContactForm = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    
+    // Check if CAPTCHA is correct
+    if (formData.captcha.toUpperCase() !== captchaCode) {
+      toast({
+        title: "CAPTCHA Error",
+        description: "The CAPTCHA code you entered is incorrect. Please try again.",
+        variant: "destructive"
+      });
+      return;
+    }
+    
     setIsSubmitting(true);
     
     try {
@@ -43,7 +70,7 @@ const ContactForm = () => {
         description: "Please send the email from your email client to complete your inquiry."
       });
       
-      // Reset form
+      // Reset form and generate new CAPTCHA
       setFormData({
         name: "",
         email: "",
@@ -51,6 +78,7 @@ const ContactForm = () => {
         message: "",
         captcha: ""
       });
+      generateCaptcha();
     } catch (error) {
       toast({
         title: "Error",
@@ -131,8 +159,7 @@ const ContactForm = () => {
         </label>
         <div className="flex items-center space-x-4">
           <div className="bg-gray-100 p-3 rounded text-sm font-medium">
-            {/* This would be replaced with an actual CAPTCHA */}
-            CAPTCHA: 8A4D2
+            CAPTCHA: {captchaCode}
           </div>
           <Input
             id="captcha"
