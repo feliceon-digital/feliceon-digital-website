@@ -41,6 +41,42 @@ const WEBSITE_INFO = {
     feliceAnalytics: "Data analysis solution for business insights",
     feliceConnect: "Integration solution for seamless system connectivity"
   },
+  productPricing: {
+    security: [
+      {
+        name: "SecureGuard Basic",
+        price: "$499/month",
+        description: "Essential security protection for small businesses",
+      },
+      {
+        name: "SecureGuard Pro",
+        price: "$999/month",
+        description: "Advanced protection for growing organizations",
+      },
+      {
+        name: "SecureGuard Enterprise",
+        price: "$1,999/month",
+        description: "Complete security suite for large enterprises",
+      }
+    ],
+    development: [
+      {
+        name: "DevStarter",
+        price: "$2,999",
+        description: "For small projects and MVP development",
+      },
+      {
+        name: "DevPro",
+        price: "$7,999",
+        description: "For medium-sized business applications",
+      },
+      {
+        name: "DevEnterprise",
+        price: "Custom",
+        description: "For complex, enterprise-level solutions",
+      }
+    ]
+  },
   security: {
     services: [
       "Security Assessments",
@@ -119,9 +155,17 @@ const Chatbot = () => {
     else if (normalizedMessage.includes("contact") || normalizedMessage.includes("reach") || normalizedMessage.includes("email") || normalizedMessage.includes("phone")) {
       return `You can reach us by phone at ${WEBSITE_INFO.contact.phone}, by email at ${WEBSITE_INFO.contact.email}, or by filling out the contact form on our Contact page. Our office is located at ${WEBSITE_INFO.contact.address}.`;
     } 
-    // Pricing information
+    // Pricing information - Enhanced with specific product pricing
     else if (normalizedMessage.includes("price") || normalizedMessage.includes("cost") || normalizedMessage.includes("fee")) {
-      return "Our pricing varies based on project requirements and scope. We offer flexible pricing models including fixed-price contracts, time and materials, and retainer options. For a detailed quote customized to your needs, please reach out through our contact form, and our team will get back to you promptly.";
+      const securityProducts = WEBSITE_INFO.productPricing.security.map(product => 
+        `${product.name}: ${product.price} - ${product.description}`
+      ).join("\n");
+      
+      const developmentProducts = WEBSITE_INFO.productPricing.development.map(product => 
+        `${product.name}: ${product.price} - ${product.description}`
+      ).join("\n");
+      
+      return `Here are our product prices:\n\nCybersecurity Solutions:\n${securityProducts}\n\nSoftware Development:\n${developmentProducts}\n\nFor custom requirements or detailed quotes, please contact us through our contact form, and our team will get back to you promptly.`;
     } 
     // Office location and hours
     else if (normalizedMessage.includes("location") || normalizedMessage.includes("address") || normalizedMessage.includes("office")) {
