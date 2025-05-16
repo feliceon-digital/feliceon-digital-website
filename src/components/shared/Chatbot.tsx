@@ -56,18 +56,65 @@ const Chatbot = () => {
   const getBotResponse = (message: string): string => {
     const normalizedMessage = message.toLowerCase();
     
+    // Website services and offerings
     if (normalizedMessage.includes("services") || normalizedMessage.includes("offer")) {
-      return "We offer IT consulting, software development, cybersecurity solutions, and security assessments. Would you like more specific information about any of these services?";
-    } else if (normalizedMessage.includes("contact") || normalizedMessage.includes("reach")) {
-      return "You can reach us by phone at +62 123 4567 890, by email at info@feliceon.com, or by filling out the contact form on our website.";
-    } else if (normalizedMessage.includes("price") || normalizedMessage.includes("cost")) {
-      return "Our pricing varies based on project requirements and scope. For a detailed quote, please reach out through our contact form, and our team will get back to you promptly.";
-    } else if (normalizedMessage.includes("location") || normalizedMessage.includes("address")) {
-      return "Our office is located at Jl. Technology Park No. 123, Jakarta, Indonesia.";
-    } else if (normalizedMessage.includes("hello") || normalizedMessage.includes("hi")) {
-      return "Hello! How can I assist you with Feliceon's services today?";
-    } else {
-      return "Thank you for your message. Would you like information about our services, pricing, or how to contact us?";
+      return "We offer a comprehensive range of IT services including software development, cybersecurity solutions, IT infrastructure management, cloud services, and digital transformation consulting. Our flagship products include FeliceShield for cybersecurity and FeliceCloud for cloud management. Would you like specific details about any of these services?";
+    } 
+    // Contact information 
+    else if (normalizedMessage.includes("contact") || normalizedMessage.includes("reach") || normalizedMessage.includes("email") || normalizedMessage.includes("phone")) {
+      return "You can reach us by phone at +62 817128123, by email at contact@feliceon-digital.com, or by filling out the contact form on our Contact page. Our office is located at Skynindo Building, Jl. Susilo Rays Grogol, Jakarta, Indonesia.";
+    } 
+    // Pricing information
+    else if (normalizedMessage.includes("price") || normalizedMessage.includes("cost") || normalizedMessage.includes("fee")) {
+      return "Our pricing varies based on project requirements and scope. We offer flexible pricing models including fixed-price contracts, time and materials, and retainer options. For a detailed quote customized to your needs, please reach out through our contact form, and our team will get back to you promptly.";
+    } 
+    // Office location and hours
+    else if (normalizedMessage.includes("location") || normalizedMessage.includes("address") || normalizedMessage.includes("office")) {
+      return "Our office is located at Skynindo Building, Jl. Susilo Rays Grogol, Jakarta, Indonesia. Our office hours are Monday to Friday from 9:00 AM to 6:00 PM, Saturday from 10:00 AM to 2:00 PM, and we're closed on Sundays.";
+    } 
+    // About the company
+    else if (normalizedMessage.includes("about") || normalizedMessage.includes("company") || normalizedMessage.includes("feliceon")) {
+      return "Feliceon Digital Solusi is a leading IT consulting and services provider based in Jakarta, Indonesia. We specialize in digital transformation, cybersecurity, and cloud solutions. Our team of experienced professionals is dedicated to helping businesses leverage technology to achieve their goals. Founded in 2015, we've successfully delivered over 200 projects for clients across Southeast Asia.";
+    }
+    // Products information
+    else if (normalizedMessage.includes("product") || normalizedMessage.includes("feliceshield") || normalizedMessage.includes("felicecloud")) {
+      return "Our flagship products include FeliceShield, a comprehensive cybersecurity solution that protects your business from digital threats, and FeliceCloud, our cloud management platform that helps businesses efficiently manage their cloud infrastructure. We also offer FeliceAnalytics for data analysis and FeliceConnect for seamless integration solutions. Would you like more details about any specific product?";
+    }
+    // Team information
+    else if (normalizedMessage.includes("team") || normalizedMessage.includes("staff") || normalizedMessage.includes("expert")) {
+      return "Our team consists of certified IT professionals with expertise in various domains including software development, cybersecurity, cloud services, and digital transformation. Our leadership team includes industry veterans with over 15 years of experience in the IT sector. We pride ourselves on continuous learning and staying updated with the latest technological advancements.";
+    }
+    // Security services
+    else if (normalizedMessage.includes("security") || normalizedMessage.includes("protect") || normalizedMessage.includes("threat")) {
+      return "We provide comprehensive cybersecurity services including security assessments, penetration testing, security monitoring, incident response, and security training. Our FeliceShield product offers real-time threat detection and protection against various cyber threats. We follow industry best practices and standards to ensure your digital assets remain secure.";
+    }
+    // Cloud services
+    else if (normalizedMessage.includes("cloud") || normalizedMessage.includes("aws") || normalizedMessage.includes("azure") || normalizedMessage.includes("google cloud")) {
+      return "We offer end-to-end cloud services including cloud migration, cloud infrastructure setup and management, cloud security, and cloud optimization. We have expertise in major cloud platforms including AWS, Microsoft Azure, and Google Cloud. Our FeliceCloud product helps businesses efficiently manage their multi-cloud environments.";
+    }
+    // Digital transformation
+    else if (normalizedMessage.includes("digital transformation") || normalizedMessage.includes("digitize") || normalizedMessage.includes("modernize")) {
+      return "Our digital transformation services help businesses modernize their operations through technology. We start with a thorough assessment of your current processes, identify areas for improvement, and implement solutions that drive efficiency and growth. Our approach focuses on people, processes, and technology to ensure successful digital transformation.";
+    }
+    // Web development
+    else if (normalizedMessage.includes("web") || normalizedMessage.includes("website") || normalizedMessage.includes("app") || normalizedMessage.includes("application")) {
+      return "We develop custom web applications and mobile apps tailored to your business needs. Our development process includes thorough planning, agile development, rigorous testing, and ongoing support. We use modern technologies like React, Angular, Node.js, and Flutter to create responsive, scalable, and secure applications.";
+    }
+    // CAPTCHA information
+    else if (normalizedMessage.includes("captcha") || normalizedMessage.includes("verification") || normalizedMessage.includes("code")) {
+      return "Our contact form includes a CAPTCHA verification to prevent spam submissions. The CAPTCHA code is randomly generated each time you load the page. Simply enter the displayed code to verify you're a human and submit your message. If you're having trouble with the CAPTCHA, you can contact us directly via email or phone.";
+    }
+    // Basic greetings
+    else if (normalizedMessage.includes("hello") || normalizedMessage.includes("hi") || normalizedMessage.includes("hey")) {
+      return "Hello! How can I assist you with Feliceon's services today? Would you like information about our IT services, products, or how to contact us?";
+    }
+    // Thank you responses
+    else if (normalizedMessage.includes("thank") || normalizedMessage.includes("thanks")) {
+      return "You're welcome! Is there anything else I can help you with today? Feel free to ask about our services, products, or how to get in touch with our team.";
+    }
+    // Fallback response
+    else {
+      return "Thank you for your message. Would you like information about our IT services, cybersecurity solutions, cloud services, digital transformation, or how to contact our team?";
     }
   };
 
