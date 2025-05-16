@@ -13,6 +13,61 @@ interface Message {
   timestamp: Date;
 }
 
+// Website information constants
+const WEBSITE_INFO = {
+  company: {
+    name: "Feliceon Digital Solusi",
+    founded: "2024",
+    description: "A leading IT consulting and services provider based in Jakarta, Indonesia, specializing in digital transformation, cybersecurity, and cloud solutions.",
+    vision: "To be the most trusted technology partner enabling businesses to thrive in the digital age through innovative and secure solutions.",
+    mission: "To deliver excellent technology services that create real value for our clients, foster innovation, and maintain the highest standards of security and integrity."
+  },
+  contact: {
+    phone: "+62 817128123",
+    email: "contact@feliceon-digital.com",
+    address: "Skynindo Building, Jl. Susilo Rays Grogol, Jakarta, Indonesia",
+    hours: "Monday to Friday: 9:00 AM to 6:00 PM, Saturday: 10:00 AM to 2:00 PM, Sunday: Closed"
+  },
+  services: [
+    "Software Development",
+    "Cybersecurity Solutions",
+    "IT Infrastructure Management",
+    "Cloud Services",
+    "Digital Transformation Consulting"
+  ],
+  products: {
+    feliceShield: "A comprehensive cybersecurity solution that protects your business from digital threats",
+    feliceCloud: "Cloud management platform that helps businesses efficiently manage their cloud infrastructure",
+    feliceAnalytics: "Data analysis solution for business insights",
+    feliceConnect: "Integration solution for seamless system connectivity"
+  },
+  security: {
+    services: [
+      "Security Assessments",
+      "Penetration Testing",
+      "Security Monitoring",
+      "Incident Response",
+      "Security Training"
+    ]
+  },
+  cloud: {
+    services: [
+      "Cloud Migration",
+      "Cloud Infrastructure Setup and Management",
+      "Cloud Security",
+      "Cloud Optimization"
+    ],
+    platforms: ["AWS", "Microsoft Azure", "Google Cloud"]
+  },
+  digitalTransformation: {
+    approach: "We start with a thorough assessment of your current processes, identify areas for improvement, and implement solutions that drive efficiency and growth. Our approach focuses on people, processes, and technology."
+  },
+  webDevelopment: {
+    technologies: ["React", "Angular", "Node.js", "Flutter"],
+    process: ["Planning", "Agile Development", "Rigorous Testing", "Ongoing Support"]
+  }
+};
+
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [inputMessage, setInputMessage] = useState("");
@@ -58,11 +113,11 @@ const Chatbot = () => {
     
     // Website services and offerings
     if (normalizedMessage.includes("services") || normalizedMessage.includes("offer")) {
-      return "We offer a comprehensive range of IT services including software development, cybersecurity solutions, IT infrastructure management, cloud services, and digital transformation consulting. Our flagship products include FeliceShield for cybersecurity and FeliceCloud for cloud management. Would you like specific details about any of these services?";
+      return `${WEBSITE_INFO.company.name} offers ${WEBSITE_INFO.services.join(", ")}. Our flagship products include FeliceShield for cybersecurity and FeliceCloud for cloud management. Would you like specific details about any of these services?`;
     } 
     // Contact information 
     else if (normalizedMessage.includes("contact") || normalizedMessage.includes("reach") || normalizedMessage.includes("email") || normalizedMessage.includes("phone")) {
-      return "You can reach us by phone at +62 817128123, by email at contact@feliceon-digital.com, or by filling out the contact form on our Contact page. Our office is located at Skynindo Building, Jl. Susilo Rays Grogol, Jakarta, Indonesia.";
+      return `You can reach us by phone at ${WEBSITE_INFO.contact.phone}, by email at ${WEBSITE_INFO.contact.email}, or by filling out the contact form on our Contact page. Our office is located at ${WEBSITE_INFO.contact.address}.`;
     } 
     // Pricing information
     else if (normalizedMessage.includes("price") || normalizedMessage.includes("cost") || normalizedMessage.includes("fee")) {
@@ -70,35 +125,35 @@ const Chatbot = () => {
     } 
     // Office location and hours
     else if (normalizedMessage.includes("location") || normalizedMessage.includes("address") || normalizedMessage.includes("office")) {
-      return "Our office is located at Skynindo Building, Jl. Susilo Rays Grogol, Jakarta, Indonesia. Our office hours are Monday to Friday from 9:00 AM to 6:00 PM, Saturday from 10:00 AM to 2:00 PM, and we're closed on Sundays.";
+      return `Our office is located at ${WEBSITE_INFO.contact.address}. Our office hours are ${WEBSITE_INFO.contact.hours}.`;
     } 
     // About the company
     else if (normalizedMessage.includes("about") || normalizedMessage.includes("company") || normalizedMessage.includes("feliceon")) {
-      return "Feliceon Digital Solusi is a leading IT consulting and services provider based in Jakarta, Indonesia. We specialize in digital transformation, cybersecurity, and cloud solutions. Our team of experienced professionals is dedicated to helping businesses leverage technology to achieve their goals. Founded in 2015, we've successfully delivered over 200 projects for clients across Southeast Asia.";
+      return `${WEBSITE_INFO.company.name} is ${WEBSITE_INFO.company.description} Founded in ${WEBSITE_INFO.company.founded}, we've successfully delivered over 200 projects for clients across Southeast Asia.`;
     }
     // Products information
     else if (normalizedMessage.includes("product") || normalizedMessage.includes("feliceshield") || normalizedMessage.includes("felicecloud")) {
-      return "Our flagship products include FeliceShield, a comprehensive cybersecurity solution that protects your business from digital threats, and FeliceCloud, our cloud management platform that helps businesses efficiently manage their cloud infrastructure. We also offer FeliceAnalytics for data analysis and FeliceConnect for seamless integration solutions. Would you like more details about any specific product?";
+      return `Our flagship products include FeliceShield, ${WEBSITE_INFO.products.feliceShield}, and FeliceCloud, ${WEBSITE_INFO.products.feliceCloud}. We also offer FeliceAnalytics for data analysis and FeliceConnect for seamless integration solutions. Would you like more details about any specific product?`;
     }
-    // Team information
-    else if (normalizedMessage.includes("team") || normalizedMessage.includes("staff") || normalizedMessage.includes("expert")) {
-      return "Our team consists of certified IT professionals with expertise in various domains including software development, cybersecurity, cloud services, and digital transformation. Our leadership team includes industry veterans with over 15 years of experience in the IT sector. We pride ourselves on continuous learning and staying updated with the latest technological advancements.";
+    // Vision and mission information
+    else if (normalizedMessage.includes("vision") || normalizedMessage.includes("mission")) {
+      return `Our Vision: ${WEBSITE_INFO.company.vision}\n\nOur Mission: ${WEBSITE_INFO.company.mission}`;
     }
     // Security services
     else if (normalizedMessage.includes("security") || normalizedMessage.includes("protect") || normalizedMessage.includes("threat")) {
-      return "We provide comprehensive cybersecurity services including security assessments, penetration testing, security monitoring, incident response, and security training. Our FeliceShield product offers real-time threat detection and protection against various cyber threats. We follow industry best practices and standards to ensure your digital assets remain secure.";
+      return `We provide comprehensive cybersecurity services including ${WEBSITE_INFO.security.services.join(", ")}. Our FeliceShield product offers real-time threat detection and protection against various cyber threats. We follow industry best practices and standards to ensure your digital assets remain secure.`;
     }
     // Cloud services
     else if (normalizedMessage.includes("cloud") || normalizedMessage.includes("aws") || normalizedMessage.includes("azure") || normalizedMessage.includes("google cloud")) {
-      return "We offer end-to-end cloud services including cloud migration, cloud infrastructure setup and management, cloud security, and cloud optimization. We have expertise in major cloud platforms including AWS, Microsoft Azure, and Google Cloud. Our FeliceCloud product helps businesses efficiently manage their multi-cloud environments.";
+      return `We offer end-to-end cloud services including ${WEBSITE_INFO.cloud.services.join(", ")}. We have expertise in major cloud platforms including ${WEBSITE_INFO.cloud.platforms.join(", ")}. Our FeliceCloud product helps businesses efficiently manage their multi-cloud environments.`;
     }
     // Digital transformation
     else if (normalizedMessage.includes("digital transformation") || normalizedMessage.includes("digitize") || normalizedMessage.includes("modernize")) {
-      return "Our digital transformation services help businesses modernize their operations through technology. We start with a thorough assessment of your current processes, identify areas for improvement, and implement solutions that drive efficiency and growth. Our approach focuses on people, processes, and technology to ensure successful digital transformation.";
+      return `Our digital transformation services help businesses modernize their operations through technology. ${WEBSITE_INFO.digitalTransformation.approach}`;
     }
     // Web development
     else if (normalizedMessage.includes("web") || normalizedMessage.includes("website") || normalizedMessage.includes("app") || normalizedMessage.includes("application")) {
-      return "We develop custom web applications and mobile apps tailored to your business needs. Our development process includes thorough planning, agile development, rigorous testing, and ongoing support. We use modern technologies like React, Angular, Node.js, and Flutter to create responsive, scalable, and secure applications.";
+      return `We develop custom web applications and mobile apps tailored to your business needs. Our development process includes ${WEBSITE_INFO.webDevelopment.process.join(", ")}. We use modern technologies like ${WEBSITE_INFO.webDevelopment.technologies.join(", ")} to create responsive, scalable, and secure applications.`;
     }
     // CAPTCHA information
     else if (normalizedMessage.includes("captcha") || normalizedMessage.includes("verification") || normalizedMessage.includes("code")) {
