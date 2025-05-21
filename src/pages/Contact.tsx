@@ -3,8 +3,17 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ContactForm from "@/components/shared/ContactForm";
 import Chatbot from "@/components/shared/Chatbot";
+import { useLocation } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
+
 const Contact = () => {
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const productName = searchParams.get('product');
+  
+  // Create a default subject if product name is available
+  const defaultSubject = productName ? `Inquiry about ${productName}` : "";
+  
   return <>
       <Navbar />
       <main className="pt-20">
@@ -17,6 +26,11 @@ const Contact = () => {
               <p className="text-xl text-feliceon-gray">
                 Get in touch with our team to discuss your technology needs
               </p>
+              {productName && (
+                <p className="mt-4 text-feliceon-blue font-medium">
+                  You're inquiring about: {productName}
+                </p>
+              )}
             </div>
           </div>
         </section>
@@ -29,7 +43,7 @@ const Contact = () => {
                 <p className="text-feliceon-gray mb-8">
                   Fill out the form below and our team will get back to you as soon as possible.
                 </p>
-                <ContactForm />
+                <ContactForm defaultSubject={defaultSubject} />
               </div>
 
               <div>

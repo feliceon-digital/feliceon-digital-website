@@ -3,8 +3,15 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Chatbot from "@/components/shared/Chatbot";
 import ProductCard from "@/components/shared/ProductCard";
+import { useNavigate } from "react-router-dom";
 
 const Products = () => {
+  const navigate = useNavigate();
+  
+  const handleCustomQuote = () => {
+    navigate('/contact?product=Custom Solution');
+  };
+
   const securityProducts = [
     {
       name: "SecureGuard Basic",
@@ -161,12 +168,12 @@ const Products = () => {
                   <p className="mb-6">
                     Our team specializes in creating tailored solutions designed specifically for your unique business challenges. Contact us for a personalized consultation and quote.
                   </p>
-                  <a 
-                    href="/contact" 
+                  <button 
+                    onClick={handleCustomQuote}
                     className="inline-flex items-center justify-center px-6 py-3 rounded-md font-medium bg-white text-feliceon-blue hover:bg-blue-50 transition-colors"
                   >
                     Request Custom Quote
-                  </a>
+                  </button>
                 </div>
                 <div className="bg-white p-8 md:p-12">
                   <h3 className="text-xl font-semibold text-feliceon-darkblue mb-4">Our Custom Solution Process</h3>

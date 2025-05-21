@@ -5,17 +5,29 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 
-const ContactForm = () => {
+interface ContactFormProps {
+  defaultSubject?: string;
+}
+
+const ContactForm = ({ defaultSubject = "" }: ContactFormProps) => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    subject: "",
+    subject: defaultSubject,
     message: "",
     captcha: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [captchaCode, setCaptchaCode] = useState("");
+
+  // Update subject when defaultSubject prop changes
+  useEffect(() => {
+    setFormData(prevData => ({
+      ...prevData,
+      subject: defaultSubject
+    }));
+  }, [defaultSubject]);
 
   // Generate a random CAPTCHA code when the component mounts
   useEffect(() => {

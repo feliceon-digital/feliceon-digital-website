@@ -2,6 +2,7 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface ProductFeature {
   feature: string;
@@ -23,6 +24,13 @@ const ProductCard = ({
   features,
   popular = false,
 }: ProductCardProps) => {
+  const navigate = useNavigate();
+
+  const handleGetStarted = () => {
+    // Navigate to the contact page with the product name as a query parameter
+    navigate(`/contact?product=${encodeURIComponent(name)}`);
+  };
+
   return (
     <Card className={`relative overflow-hidden ${
       popular ? "border-feliceon-blue shadow-lg" : "border-gray-200"
@@ -62,6 +70,7 @@ const ProductCard = ({
         <Button 
           variant={popular ? "default" : "outline"} 
           className="w-full"
+          onClick={handleGetStarted}
         >
           Get Started
         </Button>
