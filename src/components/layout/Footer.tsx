@@ -10,6 +10,14 @@ const TiktokIcon = () => <svg xmlns="http://www.w3.org/2000/svg" width="24" heig
   </svg>;
 
 const Footer = () => {
+  const handleCookieSettings = () => {
+    // Remove the cookie consent from localStorage to show the banner again
+    localStorage.removeItem("cookie-consent");
+    
+    // Force a page reload to re-render the CookieConsent component
+    window.location.reload();
+  };
+
   return <footer className="bg-feliceon-darkblue text-white">
       <div className="container mx-auto pt-12 pb-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
@@ -125,7 +133,10 @@ const Footer = () => {
               <Link to="/privacy" className="text-sm text-gray-400 hover:text-white transition-colors">
                 Privacy Policy
               </Link>
-              <button className="text-sm text-gray-400 hover:text-white transition-colors">
+              <button 
+                className="text-sm text-gray-400 hover:text-white transition-colors"
+                onClick={handleCookieSettings}
+              >
                 Cookie Settings
               </button>
             </div>
