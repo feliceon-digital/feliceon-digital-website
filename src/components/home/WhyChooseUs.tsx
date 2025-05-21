@@ -1,4 +1,3 @@
-
 import { CheckCircle } from "lucide-react";
 const WhyChooseUs = () => {
   const reasons = [{
@@ -23,7 +22,7 @@ const WhyChooseUs = () => {
   return <section className="section-padding bg-gradient-to-br from-feliceon-darkblue to-feliceon-blue text-white">
       <div className="container mx-auto">
         <div className="section-heading">
-          <h2 className="font-bold text-emerald-200">Why Choose Us</h2>
+          <h2 className="font-bold text-lime-500">Why Choose Us</h2>
           <p className="text-white">What makes Feliceon Digital Solusi your ideal technology partner</p>
         </div>
 
