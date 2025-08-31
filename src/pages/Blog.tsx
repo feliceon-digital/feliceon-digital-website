@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -129,34 +130,40 @@ const Blog = () => {
     }
   ];
 
-  const renderArticles = (articles: any[]) => (
+  const renderArticles = (articles: any[], categoryKey: string) => (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {articles.map((article) => (
-        <Card key={article.id} className="hover:shadow-lg transition-shadow cursor-pointer">
-          <CardHeader>
-            <div className="flex items-center justify-between mb-2">
-              <Badge variant="secondary">{article.category}</Badge>
-              <div className="flex items-center text-sm text-muted-foreground">
-                <Clock className="w-4 h-4 mr-1" />
-                {article.readTime}
+        <Link 
+          key={article.id} 
+          to={`/blog/${categoryKey}/${article.id}`}
+          className="block"
+        >
+          <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full">
+            <CardHeader>
+              <div className="flex items-center justify-between mb-2">
+                <Badge variant="secondary">{article.category}</Badge>
+                <div className="flex items-center text-sm text-muted-foreground">
+                  <Clock className="w-4 h-4 mr-1" />
+                  {article.readTime}
+                </div>
               </div>
-            </div>
-            <CardTitle className="text-lg">{article.title}</CardTitle>
-            <CardDescription>{article.excerpt}</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="flex items-center justify-between text-sm text-muted-foreground">
-              <div className="flex items-center">
-                <User className="w-4 h-4 mr-1" />
-                {article.author}
+              <CardTitle className="text-lg">{article.title}</CardTitle>
+              <CardDescription>{article.excerpt}</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-center justify-between text-sm text-muted-foreground">
+                <div className="flex items-center">
+                  <User className="w-4 h-4 mr-1" />
+                  {article.author}
+                </div>
+                <div className="flex items-center">
+                  <Calendar className="w-4 h-4 mr-1" />
+                  {new Date(article.date).toLocaleDateString()}
+                </div>
               </div>
-              <div className="flex items-center">
-                <Calendar className="w-4 h-4 mr-1" />
-                {new Date(article.date).toLocaleDateString()}
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+            </CardContent>
+          </Card>
+        </Link>
       ))}
     </div>
   );
@@ -199,7 +206,7 @@ const Blog = () => {
                     that are shaping the digital landscape.
                   </p>
                 </div>
-                {renderArticles(technologyNews)}
+                {renderArticles(technologyNews, "technology")}
               </TabsContent>
 
               <TabsContent value="cybersecurity" className="space-y-8">
@@ -210,7 +217,7 @@ const Blog = () => {
                     to protect your business from digital risks.
                   </p>
                 </div>
-                {renderArticles(cybersecurityNews)}
+                {renderArticles(cybersecurityNews, "cybersecurity")}
               </TabsContent>
 
               <TabsContent value="products" className="space-y-8">
@@ -221,7 +228,7 @@ const Blog = () => {
                     with detailed guides and success stories.
                   </p>
                 </div>
-                {renderArticles(productKnowledge)}
+                {renderArticles(productKnowledge, "products")}
               </TabsContent>
 
               <TabsContent value="howto" className="space-y-8">
@@ -232,7 +239,7 @@ const Blog = () => {
                     technology solutions and best practices in your organization.
                   </p>
                 </div>
-                {renderArticles(howToGuides)}
+                {renderArticles(howToGuides, "howto")}
               </TabsContent>
             </Tabs>
           </div>
